@@ -26,8 +26,25 @@
 .project-art{height:215px}.project-body{padding:19px}.project-body h3{min-height:0;font-size:21px}.project-description{min-height:0;margin-bottom:14px}.project-details summary{min-height:43px}.about-grid{grid-template-columns:1fr;gap:23px}.about-copy{grid-row:1}.about-copy>p:not(.eyebrow){font-size:14px;line-height:1.8}.about-visual{grid-row:2;min-height:330px}.about-frame{width:min(70%,280px);height:315px}.process-section{padding:64px 0}.process-heading h2{font-size:clamp(2rem,8vw,2.7rem)}.process-grid{grid-template-columns:1fr;gap:9px}.process-step{min-height:0;padding:19px}.step-number{margin-bottom:11px}.process-step h3{font-size:18px}
 .fit-layout{grid-template-columns:1fr;gap:22px}.fit-copy h2{font-size:clamp(2.5rem,10vw,3.25rem)}.fit-options{grid-template-columns:1fr}.fit-option{min-height:67px}.fit-result{min-height:0}.contact-layout{grid-template-columns:1fr;gap:26px}.contact-copy h2{font-size:clamp(2.6rem,10vw,3.5rem)}.contact-card{padding:27px 20px 22px}.contact-email{font-size:1.12rem}.contact-links{gap:12px}.sticky-book{right:13px;bottom:13px;min-height:45px;padding:10px 13px;font-size:11px}.site-footer{padding:21px 0 68px}.footer-inner{align-items:flex-start;flex-direction:column;gap:10px}.preview-dialog-head{padding:13px 15px}.preview-dialog-head h2{font-size:18px}.pdf-frame-wrap{height:64vh}}
 @media(max-width:380px){.container,.nav-wrap{width:calc(100% - 28px)}.hero h1{font-size:2.8rem}.hero-actions{align-items:flex-start;flex-direction:column}.hero-visual{min-height:290px}.portrait-frame{height:265px}.project-art{height:198px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.tool-track{animation:none}}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 
+  /* Stop only the looping and large-movement effects */
+  .hero-orbit,
+  .hero-spark,
+  .about-asterisk,
+  .scroll-cue span { animation: none; }
+
+  /* Keep the marquee, but much slower (still pauses on hover) */
+  .tool-track { animation-duration: 90s; }
+
+  /* No 3D tilt on cards */
+  .service-card,
+  .project-card { transform: none; }
+
+  /* Gentle fade only, no slide */
+  .reveal { transform: none; }
+}
 
 .hero-highlight:after{transform-origin:left center;animation:underline-in .85s .25s both}@keyframes underline-in{from{transform:rotate(-1deg) scaleX(0)}to{transform:rotate(-1deg) scaleX(1)}}
 /* Readability, contrast, portrait caption, and aligned expanded project rows */
